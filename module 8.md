@@ -16,49 +16,22 @@ To write a C program print the lowercase English word corresponding to the numbe
  
 ## Program:
 ```
-#include<stdio.h>
-int main(){
-    int n,cnt=1;
-    scanf("%d",&n);
-    for(int i=21; i<=29; i++){
-        if(i!=n){
-            cnt++;
-        }else{
-            printf("twenty ");
-            break;
-        }
-    }
-    
-    switch (cnt){
-        case 1:
-        printf("one");
-        break;
-        case 2:
-        printf("two");
-        break;
-        case 3:
-        printf("three");
-        break;
-        case 4:
-        printf("four");
-        break;
-        case 5:
-        printf("five");
-        break;
-        case 6:
-        printf("six");
-        break;
-        case 7:
-        printf("seven");
-        break;
-        case 8:
-        printf("eight");
-        break;
-        case 9:
-        printf("nine");
-        break;
-        default:
-        printf("Greater than 29");
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter number: ");
+    scanf("%d", &n);
+    switch(n) {
+        case 5: printf("seventy one\n"); break;
+        case 6: printf("seventy two\n"); break;
+        case 7: printf("seventy three\n"); break;
+        case 8: printf("seventy four\n"); break;
+        case 9: printf("seventy five\n"); break;
+        case 10: printf("seventy six\n"); break;
+        case 11: printf("seventy seven\n"); break;
+        case 12: printf("seventy eight\n"); break;
+        case 13: printf("seventy nine\n"); break;
+        default: printf("Greater than 13\n");
     }
 }
 ```
@@ -67,7 +40,7 @@ int main(){
 
 
 ## Output:
-<img width="1193" height="365" alt="image" src="https://github.com/user-attachments/assets/ade7c86e-bcf6-4e70-b01f-58814e238de8" />
+<img width="261" height="61" alt="image" src="https://github.com/user-attachments/assets/f67f18ed-f8d6-46ea-a0ff-2e61ad0e26c3" />
 
 
 
@@ -90,16 +63,30 @@ To write a C program to print ten space-separated integers in a single line deno
 6.	End
  
 ## Program:
-
-//type your code here
+```
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main(){
+    char str[20];
+    scanf("%s",str);
+    int cnt[10]={0};
+    for(int i=0; i<strlen(str); i++){
+        if (isdigit(str[i])){
+            cnt[str[i]-'0']++;
+        }
+    }
+    for(int i=0; i<10; i++){
+        printf("%d ",cnt[i]);
+    }
+}
+```
 
 
 
 
 ## Output:
-
-
-//paste your output here
+<img width="1191" height="314" alt="image" src="https://github.com/user-attachments/assets/8d361b29-dd71-4059-a58d-02ecb67b0934" />
 
 
 
@@ -127,16 +114,46 @@ Free the memory allocated for each string in s Free the memory allocated for s
 7.	End
  
 ## Program:
+```
+#include <stdio.h>
+#include <string.h>
+#define MAX 100
+int n;
+char arr[MAX][MAX];
+int used[MAX];
+char res[MAX][MAX];
 
-//type your code here
+void permute(int depth) {
+    if (depth == n) {
+        for (int i = 0; i < n; i++) {
+            printf("%s ", res[i]);
+        }
+        printf("\n");
+    }
+    for (int i = 0; i < n; i++) {
+        if (!used[i]) {
+            used[i] = 1;
+            strcpy(res[depth], arr[i]);
+            permute(depth + 1);
+            used[i] = 0;
+        }
+    }
+}
+int main() {
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
+        scanf("%s", arr[i]);
+    }
+    permute(0);
+}
+```
 
 
 
 
 ## Output:
+<img width="1193" height="485" alt="image" src="https://github.com/user-attachments/assets/e2c92188-ca22-46ee-876d-274bf959f0a0" />
 
-
-//paste your output here
 
 
 
@@ -159,16 +176,34 @@ Algorithm:
 7.	End
  
 ## Program:
-
-//type your code here
+```
+#include<stdio.h>
+int main(){
+    int n,mindist,top,bottom,left,right,s;
+    scanf("%d",&n);
+    s=n*2-1;
+    for(int i=0; i<s; i++){
+        for(int j=0; j<s; j++){
+            top=i;
+            left=j;
+            bottom=s-1-i;
+            right=s-1-j;
+            mindist=top;
+            if(mindist>bottom) mindist=bottom;
+            if(mindist>left) mindist=left;
+            if(mindist>right) mindist=right;
+            printf("%d ",n-mindist);
+        }printf("\n");
+    }
+}
+```
 
 
 
 
 ## Output:
+<img width="1259" height="983" alt="image" src="https://github.com/user-attachments/assets/fa21fef2-bae8-4093-bdb3-859d05452854" />
 
-
-//paste your output here
 
 
 
@@ -198,16 +233,25 @@ o	Call the square() function and display the result.
 5.	End.
 
 ## Program:
+```
+#include <stdio.h>
+int square() {
+    int num;
+    printf("Enter number: ");
+    scanf("%d", &num);
+    return num * num;
+}
 
-//type your code here
+int main() {
+    printf("Square number: %d\n", square());
+}
+```
 
 
 
 
 ## Output:
-
-
-//paste your output here
+<img width="255" height="66" alt="image" src="https://github.com/user-attachments/assets/b2923394-2772-4e06-8796-8110e8c5add5" />
 
 
 
