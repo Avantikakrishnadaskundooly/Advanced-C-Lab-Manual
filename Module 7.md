@@ -1,9 +1,9 @@
-EXP NO:1 C PROGRAM FOR ARRAY OF STRUCTURE TO CHECK ELIGIBILITY FOR THE VACCINE.
+# EXP NO:1 C PROGRAM FOR ARRAY OF STRUCTURE TO CHECK ELIGIBILITY FOR THE VACCINE.
 
-Aim:
+## Aim:
 To write a C program for array of structure to check eligibility for the vaccine person age above 6 years of age.
 
-Algorithm:
+## Algorithm:
 1.	Declare structure eligible with age (integer) and n (character array)
 2.	Declare variable e of type eligible
 3.	Input age and name using scanf, store in e
@@ -14,26 +14,41 @@ Else
 5.	Print details (e.age, e.n)
 6.	Return 0
  
-Program:
+## Program:
+```
+#include<stdio.h>
+struct eligibile{
+    int n; char name[20];
+}e;
+int main(){
+    scanf("%d",&e.n);
+    scanf("%s",e.name);
+    printf("Age:%d\n",e.n);
+    printf("Name:%svaccine:%d\n",e.name,e.n);
+    if(e.n>18){
+        printf("eligibility:yes");
+    }else{
+        printf("eligibility:no");
+    }
+}
+```
 
-//type your code here
+
+## Output:
+<img width="1199" height="323" alt="image" src="https://github.com/user-attachments/assets/48aab51c-edfa-4a5e-a003-1a8c72c96f99" />
 
 
-Output:
 
-//paste your output here
-
-
-Result:
+## Result:
 Thus, the program is verified successfully. 
 
 
 
-EXP NO:2 C PROGRAM FOR PASSING STRUCTURES AS FUNCTION ARGUMENTS AND RETURNING A STRUCTURE FROM A FUNCTION
-Aim:
+# EXP NO:2 C PROGRAM FOR PASSING STRUCTURES AS FUNCTION ARGUMENTS AND RETURNING A STRUCTURE FROM A FUNCTION
+## Aim:
 To write a C program for passing structure as function and returning a structure from a function
 
-Algorithm:
+## Algorithm:
 1.	Define structure numbers with members a and b.
 2.	Declare variable n of type numbers.
 3.	Prompt the user to enter values for a and b.
@@ -42,32 +57,50 @@ Algorithm:
 6.	Print the result returned by the add function.
 7.	Return 0
  
-Program:
+## Program:
+```
+#include<stdio.h>
+struct complex{
+    float real,imag;
+};
+struct complex comp(struct complex n1, struct complex n2){
+    struct complex res;
+    res.real=n1.real+n2.real;
+    res.imag=n1.imag+n2.imag;
+    return res;
+}
+int main(){
+    struct complex num1,num2,sum;
+    scanf("%f",&num1.real);
+    scanf("%f",&num1.imag);
+    scanf("%f",&num2.real);
+    scanf("%f",&num2.imag);
+    sum=comp(num1,num2);
+    printf("Sum = %.1f + %.1fi",sum.real,sum.imag);
+}
+```
 
-//type your code here
+
+
+
+## Output:
+<img width="1195" height="462" alt="image" src="https://github.com/user-attachments/assets/92d5903e-abac-4967-8ec3-a84d902b0fc8" />
 
 
 
 
-Output:
 
-
-//paste your output here
-
-
-
-
-Result:
+## Result:
 Thus, the program is verified successfully
 
 
  
-EXP.NO:3 C PROGRAM TO READ A FILE NAME FROM USER AND WRITE THAT FILE USING FOPEN()
+# EXP.NO:3 C PROGRAM TO READ A FILE NAME FROM USER AND WRITE THAT FILE USING FOPEN()
 
-Aim:
+## Aim:
 To write a C program to read a file name from user
 
-Algorithm:
+## Algorithm:
 1.	Include the necessary header file stdio.h.
 2.	Begin the main function.
 3.	Declare a file pointer p.
@@ -84,37 +117,47 @@ Use scanf to input the file name into the name array.
 4.	End the main function.
 5.	Return 0 to indicate successful program execution.
  
-Program:
-
-//type your code here
-
-
-
-
-Output:
-
-
-//paste your output here
-
-
-
-
-
+## Program:
+```
+#include <stdio.h>
+int main(){
+    char str[100];
+    scanf("%s",str);
+    FILE *fp;
+    printf("%s File Created Successfully\n",str);
+    fp=fopen(str,"w");
+    printf("%s File Opened\n",str);
+    fclose(fp);
+    printf("%s File Closed",str);
+}
+```
 
 
 
 
+## Output:
+<img width="1192" height="497" alt="image" src="https://github.com/user-attachments/assets/be0d4174-6101-43e0-982a-c900af8590ea" />
 
 
-Result:
+
+
+
+
+
+
+
+
+
+
+## Result:
 Thus, the program is verified successfully
  
 
 
-EXP NO:4   PROGRAM TO READ A FILE NAME FROM USER, WRITE THAT FILE AND INSERT TEXT IN TO THAT FILE
-Aim:
+# EXP NO:4   PROGRAM TO READ A FILE NAME FROM USER, WRITE THAT FILE AND INSERT TEXT IN TO THAT FILE
+## Aim:
 To write a C program to read, a file and insert text in that file
-Algorithm:
+## Algorithm:
 1.	Include the necessary header file stdio.h.
 2.	Begin the main function.
 3.	Declare a file pointer p.
@@ -131,34 +174,49 @@ Use scanf to input the file name into the name array and the number of strings i
 4.	End the main function.
 5.	Return 0 to indicate successful program execution.
  
-Program:
+## Program:
+```
+#include <stdio.h>
+int main(){
+    char a[100],str[100];
+    int n;
+    scanf("%s",str);
+    scanf("%d",&n);
+    FILE *fp;
+    fp=fopen(str,"w");
+    printf("%s Opened\n",str);
+    for(int i=0;i<n;i++){
+        fgets(a,sizeof(a),stdin);
+        fputs(a,fp);
+    }
+    printf("Data added Successfully");
+    fclose(fp);
+}
+```
 
-//type your code here
 
 
 
+## Output:
+<img width="1191" height="480" alt="image" src="https://github.com/user-attachments/assets/28d799c2-4f47-4bc1-87fe-103d6034b44d" />
 
-Output:
-
-
-//paste your output here
 
 
 
 
 
 
-Result:
+## Result:
 Thus, the program is verified successfully
 
 
 
-Ex No 5 : C PROGRAM TO DISPLAY STUDENT DETAILS USING STRUCTURE
+# Ex No 5 : C PROGRAM TO DISPLAY STUDENT DETAILS USING STRUCTURE
 
-Aim:
+## Aim:
 The aim of this program is to dynamically allocate memory to store information about multiple subjects (name and marks), input the details for each subject, and then display the stored information. Finally, it frees the allocated memory to prevent memory leaks.
 
-Algorithm:
+## Algorithm:
 1.Input the number of subjects.
 
 2.Read the integer value n from the user, which represents the number of subjects.
@@ -185,22 +243,53 @@ Algorithm:
 
 13.End the program by returning 0.
 
-Program:
+## Program:
+```
+#include <stdio.h>
+#include <string.h>
+struct Student{
+    int admission_no;
+    char student_name[20];
+    char course_type[40];
+    char course_name[100];
+    int tution_fee;
+    struct Date_of_admission{
+        int dd;
+        int mm;
+        int yyyy;
+    }doj;
+}e1;
+int main (){
+    scanf("%d",&e1.admission_no);
+    getchar();
+    fgets(e1.student_name,sizeof(e1.student_name),stdin);
+    fgets(e1.course_type,sizeof(e1.course_type),stdin);
+    fgets(e1.course_name,sizeof(e1.course_name),stdin);
+    scanf("%d",&e1.tution_fee);
+    getchar();
+    scanf("%d",&e1.doj.dd);
+    scanf("%d",&e1.doj.mm);
+    scanf("%d",&e1.doj.yyyy);
+    printf("Admission Number : %d\n",e1.admission_no);
+    printf("Student name : %s",e1.student_name);
+    printf("Course Type : %s",e1.course_name);
+    printf("Date of admission (dd/mm/yyyy) : %d/%d/%d\n",e1.doj.dd,e1.doj.mm,e1.doj.yyyy);
+    printf("Course Name :%s",e1.course_type);
+    printf("Tution Fee:%d",e1.tution_fee);
+}
+```
 
-//type your code here
 
 
 
+## Output:
+<img width="1194" height="657" alt="image" src="https://github.com/user-attachments/assets/deefcc9f-896d-4950-8344-70c88e975395" />
 
-Output:
-
-
-//paste your output here
 
 
 
 
 
 
-Result:
+## Result:
 Thus, the program is verified successfully
