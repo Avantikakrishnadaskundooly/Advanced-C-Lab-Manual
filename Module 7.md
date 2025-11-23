@@ -245,37 +245,32 @@ The aim of this program is to dynamically allocate memory to store information a
 
 ## Program:
 ```
-#include <stdio.h>
-#include <string.h>
-struct Student{
-    int admission_no;
-    char student_name[20];
-    char course_type[40];
-    char course_name[100];
-    int tution_fee;
-    struct Date_of_admission{
-        int dd;
-        int mm;
-        int yyyy;
-    }doj;
-}e1;
-int main (){
-    scanf("%d",&e1.admission_no);
-    getchar();
-    fgets(e1.student_name,sizeof(e1.student_name),stdin);
-    fgets(e1.course_type,sizeof(e1.course_type),stdin);
-    fgets(e1.course_name,sizeof(e1.course_name),stdin);
-    scanf("%d",&e1.tution_fee);
-    getchar();
-    scanf("%d",&e1.doj.dd);
-    scanf("%d",&e1.doj.mm);
-    scanf("%d",&e1.doj.yyyy);
-    printf("Admission Number : %d\n",e1.admission_no);
-    printf("Student name : %s",e1.student_name);
-    printf("Course Type : %s",e1.course_name);
-    printf("Date of admission (dd/mm/yyyy) : %d/%d/%d\n",e1.doj.dd,e1.doj.mm,e1.doj.yyyy);
-    printf("Course Name :%s",e1.course_type);
-    printf("Tution Fee:%d",e1.tution_fee);
+#include<stdio.h>
+struct student{
+    int reg,jun,jul,aug,sep;
+    char name[20];
+}stu;
+int main(){
+    float n,tod,atd;
+    scanf("%d",&stu.reg);
+    scanf("%s",stu.name);
+    scanf("%d",&stu.jun);
+    scanf("%d",&stu.jul);
+    scanf("%d",&stu.aug);
+    scanf("%d",&stu.sep);
+    printf("Reg.no:%d\n",stu.reg);
+    printf("Name:%s\n",stu.name);
+    n=21*4; tod=stu.jun+stu.jul+stu.aug+stu.sep;
+    if(tod<=n){
+        printf("Total.No.of.present days:%.0f\n",tod);
+    }
+    atd=(tod/n)*100;
+    printf("Attendence:%.2f\n",atd);
+    if(atd>75){
+        printf("eligibility:yes");
+    }else{
+        printf("eligibility:no");
+    }
 }
 ```
 
@@ -283,7 +278,7 @@ int main (){
 
 
 ## Output:
-<img width="1194" height="657" alt="image" src="https://github.com/user-attachments/assets/deefcc9f-896d-4950-8344-70c88e975395" />
+<img width="1193" height="555" alt="image" src="https://github.com/user-attachments/assets/6506abfa-c541-4d08-9439-0da75319baaa" />
 
 
 
